@@ -1,0 +1,7 @@
+== Docker
+
+*docker* -> comando base para a linha de comando do docker. Se digitado sozinho aprecerá a ajuda do docker. Útil para saber se o docker está instalado na máquina.
+
+*service docker status* -> verifica se o docker está em execução.
+
+*service docker start* --> inicia daemon do docker.
