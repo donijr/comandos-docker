@@ -4,4 +4,4 @@
 
 *service docker status* -> verifica se o docker está em execução.
 
-*service docker start* --> inicia daemon do docker.
+*service docker start* -> inicia daemon do docker.
