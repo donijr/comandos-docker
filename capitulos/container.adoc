@@ -62,7 +62,7 @@ Ao utlizar opções -it, se quiser sair do container e deixar ele executando ain
 
 *docker container run -[opcoes]*
 
-===== opcoes podem ser:
+.opcoes podem ser:
 |===
 |Opção |O que faz
 
