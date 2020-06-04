@@ -1,0 +1,3 @@
+=== stop
+
+*docker stop containerId* -> Para um (ou mais) container ativos que tem o containerId como CONTAINER ID.
