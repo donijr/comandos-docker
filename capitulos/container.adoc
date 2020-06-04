@@ -1,0 +1,103 @@
+:experimental:
+
+=== container
+
+*Gerenciamento de containers*
+
+==== A
+
+*docker container attach containerID* -> Possibilita conectar a um container em execução. Basta passarmos o container id como parâmetro.
+
+[TIP]
+.Como sair do container sem encerrar
+====
+Se quiser sair do container e deixar ele ainda executando, utilize a combinação de teclas kbd:[Ctrl + P + Q] e não digite nada. Se digitar `exit` sairá do container e o encerrará.
+====
+
+==== C
+
+*docker container create -ti nomeContainer* -> Apenas cria um container nomeContainer. Não cria e inicializa o container. O container é apenas criado.
+
+==== L
+
+*docker container ls* -> Lista containers em execução.
+
+
+===== Sinificado das Colunas
+[cols="1a,2"]
+|===
+|Coluna | Significado
+
+|CONTAINER ID
+|identificação única do container
+
+|IMAGE
+|a imagem que foi utilizada para a execução do container
+
+|COMMAND
+|o comando em execução
+
+|CREATED
+|quando o container foi criado
+
+|STATUS
+|o seu estado atual
+
+|PORT
+|a porta do container e do host que esse container utiliza
+
+|NAMES
+|o nome do container
+
+|===
+
+*docker container ls -a* --> Lista todos os containers (em execução, finalizados e parados).
+
+==== R
+
+[TIP]
+.Como sair do container sem encerrar
+====
+Ao utlizar opções -it, se quiser sair do container e deixar ele executando ainda utilize a combinação de teclas kbd:[Ctrl + P + Q] e não digite nada. Se digitar `exit` sairá do container e o encerrará.
+====
+
+*docker container run -[opcoes]*
+
+===== opcoes podem ser:
+|===
+|Opção |O que faz
+
+|-t 
+|disponibiliza um TTY(console) para o container
+
+|-i
+|mantém o STDIN aberto mesmo que você não esteja conectado no container
+
+|-d
+|faz com que o container rode como um daemon, ou seja, sem a interatividade que os outros dois parâmetros fornecem.
+
+|===
+
+*docker container run -it IMAGE* ->  Executa e cria o novo container IMAGE = image do container que se quer executar. E ainda por causa e -it , vai disponibilizar o terminal do container compartilhado com o terminal do host, fazendo o container continuar em execução até que o container seja finalizado. Se a imagem já existir ela será usada.
+
+*docker container run nomeContainer* -> Executa e cria o novo container nomeContainer.
+
+*docker container run hello-world* -> Executa o container hello-world. Se o docker hello-world não estiver sido criado no host, então ele pesquisa no docker-hub  e depois baixa ele para depois executar.
+
+*docker container run echo “Ola Mundo”* -> Executa e cria um novo container do ubuntu, executa o comando echo “Ola Mundo” e depois encerra o container.
+
+*docker run nomeContainer comandoParaExecutar* -> Cria e executa um novo container nomeContainer e depois dentro do container irá executar o comandoParaExecuta.
+
+*docker container rm containerID* -> Remove um container parado ,com a respectiva containerID, já existente. A imagem que originou o container ainda continua.
+
+*docker container rm containerID -f* -> Remove um container mesmo em execução com a containerID respectiva. Remove o container forçadamente.
+
+==== P
+
+*docker container prune* -> Rremove todos os container parados.
+
+==== S
+
+*docker container stop containerId* -> Para um (ou mais) container ativos que tem o containerId como CONTAINER ID.
+
+*docker container start containerId* -> Inicia um (ou mais) container parado que tem o containerId como CONTAINER ID.
