@@ -1,6 +1,6 @@
 = Comandos Docker 
 :toc:
-:toclevels: 3
+:toclevels: 5
 :toc: left
 :toc-title: Índice
 :experimental:
@@ -11,3 +11,15 @@
 Disponiível em : https://docs.docker.com/engine/reference/commandline
 
 include::{capitulosdir}/docker.adoc[]
+
+include::{capitulosdir}/container.adoc[]
+
+include::{capitulosdir}/image.adoc[]
+
+include::{capitulosdir}/images.adoc[]
+
+include::{capitulosdir}/rmi.adoc[]
+
+include::{capitulosdir}/start.adoc[]
+
+include::{capitulosdir}/stop.adoc[]
