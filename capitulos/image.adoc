@@ -1,0 +1,26 @@
+=== image
+
+==== L
+
+*docker image ls* -> listar imagens existentes
+
+.Significado das colunas
+|===
+|Coluna |Significado
+
+
+|REPOSITORY
+|nome da imagem
+ 
+|TAG
+|versão da imagem
+
+|IMAGE ID
+|identificação da imagem
+
+|CREATED
+|quando a imagem foi criada
+
+|SIZE
+|tamanho da imagem
+|===
