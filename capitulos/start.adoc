@@ -1,0 +1,13 @@
+:experimental:
+
+=== start
+
+*docker start containerId* -> Inicia um (ou mais) container parado que tem o containerId como CONTAINER ID.
+
+*docker start -a -i containerId* -> inicia um container parado que tem o containerId como CONTAINER ID, e ao mesmo tempo uso um attach(-a) no container com intereção do terminal(-i). Inicio o container e ao mesmo e já entro dentro dele em execução com um terminal atrelado. 
+
+[TIP]
+.Caso queira derrubar o container
+====
+Se quiser sair se derrubar o container usar kbd:[Ctrl + P + Q].
+====
