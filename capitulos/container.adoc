@@ -23,8 +23,7 @@ Se quiser sair do container e deixar ele ainda executando, utilize a combinaçã
 *docker container ls* -> Lista containers em execução.
 
 
-===== Sinificado das Colunas
-[cols="1a,2"]
+.Sinificado das Colunas
 |===
 |Coluna | Significado
 
