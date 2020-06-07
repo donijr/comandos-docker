@@ -6,6 +6,8 @@
 
 ==== A
 
+===== attach
+
 *docker container attach containerID* -> Possibilita conectar a um container em execução. Basta passarmos o container id como parâmetro.
 
 [TIP]
@@ -16,9 +18,13 @@ Se quiser sair do container e deixar ele ainda executando, utilize a combinaçã
 
 ==== C
 
+===== create
+
 *docker container create -ti nomeContainer* -> Apenas cria um container nomeContainer. Não cria e inicializa o container. O container é apenas criado.
 
 ==== L
+
+===== ls
 
 *docker container ls* -> Lista containers em execução.
 
@@ -54,6 +60,8 @@ Se quiser sair do container e deixar ele ainda executando, utilize a combinaçã
 
 ==== R
 
+===== run
+
 [TIP]
 .Como sair do container sem encerrar
 ====
@@ -87,16 +95,48 @@ Ao utlizar opções -it, se quiser sair do container e deixar ele executando ain
 
 *docker run nomeContainer comandoParaExecutar* -> Cria e executa um novo container nomeContainer e depois dentro do container irá executar o comandoParaExecuta.
 
+===== restart
+
+*docker container restart containerID* -> reinicia um ou masi containers com o containerID.
+
+===== rm
+
 *docker container rm containerID* -> Remove um container parado ,com a respectiva containerID, já existente. A imagem que originou o container ainda continua.
 
 *docker container rm containerID -f* -> Remove um container mesmo em execução com a containerID respectiva. Remove o container forçadamente.
 
 ==== P
 
+===== prune
+
 *docker container prune* -> Rremove todos os container parados.
 
+===== pause
+
+*docker container pause containerID* -> pausa todos os processos rm um ou mais containers com o container ID.
+
 ==== S
+
+===== start
 
 *docker container stop containerId* -> Para um (ou mais) container ativos que tem o containerId como CONTAINER ID.
 
 *docker container start containerId* -> Inicia um (ou mais) container parado que tem o containerId como CONTAINER ID.
+
+===== stats
+
+*docker container stats* -> Exibe informações(estatísticas) em tempo real referentes ao uso de recursos por todos os containers. Você terá informações de consumo de CPU, memória e rede. 
+[TIP]
+.Como sair
+====
+Para sair utilize kbd:[Ctrl + C]
+====
+
+*docker container stats containerID* -> Exibe informações(estatísticas) em tempo real referentes ao uso de recursosde um ou mais container com containerID. Você terá informações de consumo de CPU, memória e rede. 
+Exibir uma transmissão ao vivo de estatísticas de uso de recursos de conteiner(s)
+
+==== U
+
+===== unpause
+
+*docker container unpause containerID* -> "despausa" um ou mais container com containerID. Utilizado para desfazer o docker container pause 
