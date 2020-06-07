@@ -2,6 +2,8 @@
 
 ==== L
 
+===== ls
+
 *docker image ls* -> listar imagens existentes
 
 .Significado das colunas
