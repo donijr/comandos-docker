@@ -22,7 +22,27 @@ Se quiser sair do container e deixar ele ainda executando, utilize a combinaçã
 
 *docker container create -ti nomeContainer* -> Apenas cria um container nomeContainer. Não cria e inicializa o container. O container é apenas criado.
 
+==== I
+
+===== inspect
+
+*docker container inspect containerID* -> exibe informações detalhadas do container com contianerID. Exemplos de informações exibidas: sobre memória, cou, etc.
+
+*docker container inspect containerID | grep -i mem* -> Filtra resultados de informações sobre a memória do container.
+
+
 ==== L
+
+===== logs
+
+*docker container logs containerID* -> Exibe STDOUT, ou seja, a saída padrão do container com containerID. 
+
+*docker container logs -f containerID* -> Exibe o STDOUT, a saída padrão do container com containerID de forma dinâmica, parecido com o `tail -f`. O terminal vai ficar travado exibindo os logs.
+[TIP]
+.Como cancelar a exibição dos logs
+====
+Para sair utilize kbd:[Ctrl + C].
+====
 
 ===== ls
 
@@ -68,7 +88,7 @@ Se quiser sair do container e deixar ele ainda executando, utilize a combinaçã
 Ao utlizar opções -it, se quiser sair do container e deixar ele executando ainda utilize a combinação de teclas kbd:[Ctrl + P + Q] e não digite nada. Se digitar `exit` sairá do container e o encerrará.
 ====
 
-*docker container run -[opcoes]*
+*docker container run [opcoes]*
 
 .opcoes podem ser:
 |===
@@ -83,9 +103,13 @@ Ao utlizar opções -it, se quiser sair do container e deixar ele executando ain
 |-d
 |faz com que o container rode como um daemon, ou seja, sem a interatividade que os outros dois parâmetros fornecem.
 
-|===
+|--name
+|nomear um container
 
-*docker container run -it IMAGE* ->  Executa e cria o novo container IMAGE = image do container que se quer executar. E ainda por causa e -it , vai disponibilizar o terminal do container compartilhado com o terminal do host, fazendo o container continuar em execução até que o container seja finalizado. Se a imagem já existir ela será usada.
+|-m
+|limite de memória do container.
+
+|===
 
 *docker container run nomeContainer* -> Executa e cria o novo container nomeContainer.
 
@@ -95,6 +119,14 @@ Ao utlizar opções -it, se quiser sair do container e deixar ele executando ain
 
 *docker run nomeContainer comandoParaExecutar* -> Cria e executa um novo container nomeContainer e depois dentro do container irá executar o comandoParaExecuta.
 
+*docker container run -it IMAGE* ->  Executa e cria o novo container IMAGE = image do container que se quer executar. E ainda por causa e -it , vai disponibilizar o terminal do container compartilhado com o terminal do host, fazendo o container continuar em execução até que o container seja finalizado. Se a imagem já existir ela será usada.
+
+*docker container run -it --name NomeContainer IMAGE* -> Com a adição de --name nomeCotainer ao comando `docker container run -it IMAGE` agora podemos dar um nome ao container criado que será nomeContainer, pois --name define o nome do container.
+
+*docker container run -ti -m nM  IMAGE* -> Com a adição de `-m 512M` ao `docker container run` estamos limitando o container que usa a imagem IMAGE, a utilizar n quantide de  Mb de memória do host.
+
+*docker container run -ti -m 512M --name nomeContainer IMAGE* -> Com a adição de `-m 512M` ao `docker container run` estamos limitando o container com nomeContainer, que usa a imagem IMAGE, a utilizar 512 Mb de memória do host.
+
 ===== restart
 
 *docker container restart containerID* -> reinicia um ou masi containers com o containerID.
@@ -102,6 +134,11 @@ Ao utlizar opções -it, se quiser sair do container e deixar ele executando ain
 ===== rm
 
 *docker container rm containerID* -> Remove um container parado ,com a respectiva containerID, já existente. A imagem que originou o container ainda continua.
+[IMPORTANT]
+.O que acontece quanto remove-se o container.
+====
+Ao remover o container só renovemos o container, a imagem que foi utilizada para a criação ainda continua no host.
+====
 
 *docker container rm containerID -f* -> Remove um container mesmo em execução com a containerID respectiva. Remove o container forçadamente.
 
@@ -134,6 +171,12 @@ Para sair utilize kbd:[Ctrl + C]
 
 *docker container stats containerID* -> Exibe informações(estatísticas) em tempo real referentes ao uso de recursosde um ou mais container com containerID. Você terá informações de consumo de CPU, memória e rede. 
 Exibir uma transmissão ao vivo de estatísticas de uso de recursos de conteiner(s)
+
+==== T
+
+===== top
+
+*docker container top containerID* -> exibe informações sobre os processos em execução de um container com containerID. Colunas exibidas do top: UID, PID, C, STIME, TTY, TIME, COMMAND.
 
 ==== U
 
