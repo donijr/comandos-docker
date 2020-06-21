@@ -5,3 +5,12 @@
 *service docker status* -> verifica se o docker está em execução.
 
 *service docker start* -> inicia daemon do docker.
+
+=== I
+
+*docker info* -> Exibe informções gerais sobre o programa docker instalado. Por exemplo exibe a versão do kernel, 
+quantidade de containers, quantidade de imagens, plugins instalados, entre outras infirmações.
+
+=== V
+
+*docker version* -> Exibe informações sobre a versão do docker de uma maneira que seja fácil de ler.
