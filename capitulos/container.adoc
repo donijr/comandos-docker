@@ -16,6 +16,10 @@
 Se quiser sair do container e deixar ele ainda executando, utilize a combinação de teclas kbd:[Ctrl + P + Q] e não digite nada. Se digitar `exit` sairá do container e o encerrará.
 ====
 
+==== B
+
+*docker build -t nomeRepository:tag /caminho/da/pasta/do/dockerfile* -> cria uma imagem do container a partir de um Dockerfile que deve estar indiacado no caminho no final do comando. Só se indica o caminho da pasta, não precisa indica o caminho completo do arquivo.
+
 ==== C
 
 ===== create
@@ -27,6 +31,8 @@ Se quiser sair do container e deixar ele ainda executando, utilize a combinaçã
 ===== inspect
 
 *docker container inspect containerID* -> exibe informações detalhadas do container com contianerID. Exemplos de informações exibidas: sobre memória, cou, etc.
+
+*docker container inspect containerID | grep -i cpu* -> Filtra resultados de informações das configurações de CPU do container.
 
 *docker container inspect containerID | grep -i mem* -> Filtra resultados de informações sobre a memória do container.
 
@@ -88,7 +94,7 @@ Para sair utilize kbd:[Ctrl + C].
 Ao utlizar opções -it, se quiser sair do container e deixar ele executando ainda utilize a combinação de teclas kbd:[Ctrl + P + Q] e não digite nada. Se digitar `exit` sairá do container e o encerrará.
 ====
 
-*docker container run [opcoes]*
+*docker container run [opcoes] [imagem:tag]*
 
 .opcoes podem ser:
 |===
@@ -119,9 +125,13 @@ Ao utlizar opções -it, se quiser sair do container e deixar ele executando ain
 
 *docker run nomeContainer comandoParaExecutar* -> Cria e executa um novo container nomeContainer e depois dentro do container irá executar o comandoParaExecuta.
 
+
+
 *docker container run -it IMAGE* ->  Executa e cria o novo container IMAGE = image do container que se quer executar. E ainda por causa e -it , vai disponibilizar o terminal do container compartilhado com o terminal do host, fazendo o container continuar em execução até que o container seja finalizado. Se a imagem já existir ela será usada.
 
 *docker container run -it --name NomeContainer IMAGE* -> Com a adição de --name nomeCotainer ao comando `docker container run -it IMAGE` agora podemos dar um nome ao container criado que será nomeContainer, pois --name define o nome do container.
+
+*docker container run --cpus=0.5 --name nomeContainer IMAGE* -> Com a adicão de `--cpu=0.5` ao comando `docker container run` estamos limitando o container com nomeContainer a utilizar 0,5 CPU, ou seja, metade de 1 core.
 
 *docker container run -ti -m nM  IMAGE* -> Com a adição de `-m 512M` ao `docker container run` estamos limitando o container que usa a imagem IMAGE, a utilizar n quantide de  Mb de memória do host.
 
@@ -182,4 +192,29 @@ Exibir uma transmissão ao vivo de estatísticas de uso de recursos de conteiner
 
 ===== unpause
 
-*docker container unpause containerID* -> "despausa" um ou mais container com containerID. Utilizado para desfazer o docker container pause 
+*docker container unpause containerID* -> "despausa" um ou mais container com containerID. Utilizado para desfazer o docker container pause.
+
+===== update
+
+*docker container update -m 256m --cpus=1 containerID* -> `docker container update`permite alterar configurações de um ou mais containers com containerID em containers em execução. No exemplo alteramos a memória e cpu.
+[WARNING]
+====
+`docker container update` e `docker update` não são suportados por containers Windows.
+====
+[LIST]
+.Opções disponíveis para docker container update:
+* --blkio-weight
+* --cpu-period
+* --cpu-quota	
+* --cpu-rt-period
+* --cpu-rt-runtime
+* --cpu-shares , -c
+* --cpus
+* --cpuset-cpus
+* --cpuset-mems
+* --kernel-memory
+* --memory , -m
+* --memory-reservation
+* --memory-swap
+* --pids-limit
+* --restart
