@@ -8,6 +8,8 @@
 
 === I
 
+==== info
+
 *docker info* -> Exibe informções gerais sobre o programa docker instalado. Por exemplo exibe a versão do kernel, 
 quantidade de containers, quantidade de imagens, plugins instalados, entre outras infirmações.
 
