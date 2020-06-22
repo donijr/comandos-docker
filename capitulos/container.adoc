@@ -54,7 +54,7 @@ Para sair utilize kbd:[Ctrl + C].
 
 *docker container ls* -> Lista containers em execução.
 
-
+[TABELA]
 .Significado das Colunas
 |===
 |Coluna | Significado
@@ -83,6 +83,10 @@ Para sair utilize kbd:[Ctrl + C].
 |===
 
 *docker container ls -a* --> Lista todos os containers (em execução, finalizados e parados).
+
+*docker container ls -q* -> Exibe somente os CONTAINER ID dos contianers em execução.
+
+*docker container ls -a -q* -> exibe somente os CONTAINER ID de todos os containers (em execução, finalizados e parados).
 
 ==== R
 
@@ -151,6 +155,8 @@ Ao remover o container só renovemos o container, a imagem que foi utilizada par
 ====
 
 *docker container rm containerID -f* -> Remove um container mesmo em execução com a containerID respectiva. Remove o container forçadamente.
+
+*docker container rm $(docker container ls -a -q)* -> Remove os containers que estão na lista do comando `docker container ls -a -q`.
 
 ==== P
 
