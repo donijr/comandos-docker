@@ -4,6 +4,7 @@
 :toc: left
 :toc-title: Índice
 :experimental:
+:doctype: book
 
 :capitulosdir: ./capitulos
 

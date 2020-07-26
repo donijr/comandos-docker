@@ -1,0 +1,38 @@
+== Docker Volume
+
+=== Algumas Explicações Sobre Volumes
+
+=== Comandos 
+
+==== ls
+
+*docker volume ls* -> lista volumes dos container no host
+
+==== rm
+
+*docker volume rm volumeName* -> remove um ou mais volume(s) com volumeName especificado
+
+===== prune
+
+*docker volume prune* -> remove todos os volume locais que não estão sendo usados. 
+
+=== Montando Volumes
+
+==== Utilizando --mout
+
+[IMPORTANT]
+====
+Não é muito aconselhevel utilizar o --mout e suas opções ao montar volumes. è uma forma mais antiga e não muito elegante.
+====
+
+*docker container run -ti --mount type=bind,src=/pastaLocalNoHost,dst=/pastaDestinoContainer imagemContainer* -> Cria um container utilizando a imagem imagemContainer e conpartilhar a pasta pastaLocalNoHost que está no host com o container, onde essa pasta corresponderá a pastaDestinoContainer. 
+
+.Explicando o comando
+`--mount`:: anexa um ponto de montagem de arquivos ao container.
+`type=bind`:: tipo da montagem do volume.
+`src=localPastaOrigem`:: indica o local no host que queremos que seja montado e compartilhado com o container
+`dst=localPastaDestino`:: indica o local que o diretório indicado em `src=localPastaOrigem` será montado dentro do container.
+
+=== Links para explicação sobre volumes no docker
+
+http://stack.desenvolvedor.expert/appendix/docker/armazenamento.html
