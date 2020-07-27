@@ -1,7 +1,3 @@
-:toc:
-:toclevels: 5
-:toc: left
-
 == Docker Volume
 
 === Algumas Explicações Sobre Volumes
