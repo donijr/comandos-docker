@@ -1,8 +1,26 @@
+:toc:
+:toclevels: 5
+:toc: left
+
 == Docker Volume
 
 === Algumas Explicações Sobre Volumes
 
-=== Comandos 
+=== Comandos
+
+==== create
+
+*docker volume create volumeName* -> cria um volume volumeName no host local.
+[IMPORTANT]
+====
+Sempre que um volume é criado ele cria um diretório com o mesmo nome dentro de `/var/lib/docker/volumes`
+====
+
+==== inspect
+
+*docker volume inspect volumeName* -> exibe informações detalalhadas de um ou mais volumes.
+
+*docker volume inspect --format '{{ .Mountpoint }}' volumeName* -> exibe a localização do se volume com volumeName no host.
 
 ==== ls
 
@@ -12,26 +30,47 @@
 
 *docker volume rm volumeName* -> remove um ou mais volume(s) com volumeName especificado
 
-===== prune
+==== prune
 
-*docker volume prune* -> remove todos os volume locais que não estão sendo usados. 
+*docker volume prune* -> remove todos os volumes que não estão sendo usados. 
 
 === Montando Volumes
 
-==== Utilizando --mout
+==== Utilizando --mout type=bind
 
 [IMPORTANT]
 ====
-Não é muito aconselhevel utilizar o --mout e suas opções ao montar volumes. è uma forma mais antiga e não muito elegante.
+Não é muito aconselhevel utilizar o `--mout type=bind` e suas opções ao montar volumes. è uma forma mais antiga e não muito elegante.
 ====
 
 *docker container run -ti --mount type=bind,src=/pastaLocalNoHost,dst=/pastaDestinoContainer imagemContainer* -> Cria um container utilizando a imagem imagemContainer e conpartilhar a pasta pastaLocalNoHost que está no host com o container, onde essa pasta corresponderá a pastaDestinoContainer. 
 
 .Explicando o comando
 `--mount`:: anexa um ponto de montagem de arquivos ao container.
-`type=bind`:: tipo da montagem do volume.
+`type=bind`:: indica que o source(src) será um diretório.
 `src=localPastaOrigem`:: indica o local no host que queremos que seja montado e compartilhado com o container
 `dst=localPastaDestino`:: indica o local que o diretório indicado em `src=localPastaOrigem` será montado dentro do container.
+
+[NOTE]
+====
+No lugar de `src=/pastaLocalNoHost,dst=/pastaDestinoContainer` ao invés de referenciar uma pasta também podemos referenciar um arquivo no `src` e `dst`.
+====
+
+==== Utilizando --mout type=volume
+
+[IMPORTANT]
+====
+O `--mout type=volume` é a maneira mais elegante  atual de se criar volumes.
+====
+
+*docker container run -ti --mount type=volume,src=volumeName,dst=/pastaDestinoContainer imagemContainer* -> Cria um container utilizando a imagem imagemContainer e compartilhar o vulume criado com nome volumeName que está no host com o container, onde essa o conteúdo desse volume  corresponderá a pastaDestinoContainer. 
+
+.Explicando o comando
+`--mount`:: anexa um ponto de montagem de arquivos ao container.
+`type=volume`:: indica que o tipo é volume e que o source(src) será um volume.
+`src=volumeName`:: indica qual o volume, no caso volumeName, que queremos que seja montado e compartilhado com o container
+`dst=localPastaDestino`:: indica o local que o diretório indicado em `src=localPastaOrigem` será montado dentro do container.
+
 
 === Links para explicação sobre volumes no docker
 
