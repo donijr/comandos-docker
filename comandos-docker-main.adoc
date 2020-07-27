@@ -9,7 +9,7 @@
 :capitulosdir: ./capitulos
 
 .Documentação Oficial
-Disponiível em : https://docs.docker.com/engine/reference/commandline
+A documentação oficial da linha de comando do docker está disponível https://docs.docker.com/engine/reference/commandline/docker/[aqui]
 
 = Comandos
 
