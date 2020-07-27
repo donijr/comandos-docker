@@ -5,6 +5,7 @@
 :toc-title: Índice
 :experimental:
 :doctype: book
+:!sectnums:
 
 :capitulosdir: ./capitulos
 
