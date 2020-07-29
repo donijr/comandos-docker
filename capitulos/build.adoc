@@ -1,0 +1,3 @@
+=== build
+
+*docker build caminho/do/dockerfile* -> comando para criar uma imagem a partit do dockerfile indicado. Se caminho for `.` irá buildar tudo que está na pasta.
