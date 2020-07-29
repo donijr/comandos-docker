@@ -14,9 +14,11 @@ A documentação oficial da linha de comando do docker está disponível https:/
 
 = Comandos
 
-include::{capitulosdir}/docker.adoc[]
+include::{capitulosdir}/build.adoc[]
 
 include::{capitulosdir}/container.adoc[]
+
+include::{capitulosdir}/docker.adoc[]
 
 include::{capitulosdir}/image.adoc[]
 
