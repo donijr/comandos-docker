@@ -26,3 +26,9 @@
 |SIZE
 |tamanho da imagem
 |===
+
+==== I
+
+===== inspect
+
+*docker image inspect nomeImagem* -> exibe informações detalhadas de uma ou mas imagens com nome igual a nomeImagem.
