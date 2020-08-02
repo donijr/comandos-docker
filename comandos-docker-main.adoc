@@ -16,6 +16,8 @@ A documentação oficial da linha de comando do docker está disponível https:/
 
 include::{capitulosdir}/build.adoc[]
 
+include::{capitulosdir}/commit.adoc[]
+
 include::{capitulosdir}/container.adoc[]
 
 include::{capitulosdir}/docker.adoc[]
@@ -29,6 +31,8 @@ include::{capitulosdir}/rmi.adoc[]
 include::{capitulosdir}/start.adoc[]
 
 include::{capitulosdir}/stop.adoc[]
+
+include::{capitulosdir}/tag.adoc[]
 
 = Volumes no Docker
 
