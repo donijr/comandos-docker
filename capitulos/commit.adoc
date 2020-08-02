@@ -1,0 +1,5 @@
+=== commit
+
+*docker commit containerID* -> cria uma imagem a partir de um container em execução que tenha o contianerID especificado. Com esse comando a imagem ficará sem REPOSITORY (nome) e TAG.
+
+*docker commit containerID nomeImagem:nomeTag* -> cria uma imagem a partir de um container em execução que tenha o contianerID especificado. A imagem terá REPOSITPRY (nome) como nomeImagem e TAG como nomeTag.
