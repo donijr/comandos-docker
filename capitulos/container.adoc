@@ -129,9 +129,9 @@ Ao utlizar opções -it, se quiser sair do container e deixar ele executando ain
 
 *docker run nomeContainer comandoParaExecutar* -> Cria e executa um novo container nomeContainer e depois dentro do container irá executar o comandoParaExecuta.
 
-
-
 *docker container run -it IMAGE* ->  Executa e cria o novo container IMAGE = image do container que se quer executar. E ainda por causa e -it , vai disponibilizar o terminal do container compartilhado com o terminal do host, fazendo o container continuar em execução até que o container seja finalizado. Se a imagem já existir ela será usada.
+
+*docker container run -it ubuntu /bin/bash* -> Executa e cria o novo container com a imagem do ubuntu, vai disponibilizar o terminal do container compartilhado com o terminal do host, fazendo o container continuar em execução até que o container seja finalizado. Também vai executar o comando `/bin/bash` ao executar o container.
 
 *docker container run -it --name NomeContainer IMAGE* -> Com a adição de --name nomeCotainer ao comando `docker container run -it IMAGE` agora podemos dar um nome ao container criado que será nomeContainer, pois --name define o nome do container.
 
