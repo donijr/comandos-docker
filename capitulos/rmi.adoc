@@ -1,3 +1,3 @@
-=== rmi
+== rmi
 
 *docker rmi REPOSITORY:Tag* -> Remove uma ou mais imagens, também pode usar a combinação name(repository):tag com o docker rmi.

@@ -1,8 +1,8 @@
-=== image
+== image
 
-==== L
+=== L
 
-===== ls
+==== ls
 
 *docker image ls* -> listar imagens existentes
 
@@ -27,8 +27,8 @@
 |tamanho da imagem
 |===
 
-==== I
+=== I
 
-===== inspect
+==== inspect
 
 *docker image inspect nomeImagem* -> exibe informações detalhadas de uma ou mas imagens com nome igual a nomeImagem.

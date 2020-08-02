@@ -1,6 +1,6 @@
 :experimental:
 
-=== start
+== start
 
 *docker start containerId* -> Inicia um (ou mais) container parado que tem o containerId como CONTAINER ID.
 

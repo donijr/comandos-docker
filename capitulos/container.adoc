@@ -1,12 +1,12 @@
 //:experimental:
 
-=== container
+== container
 
 *Gerenciamento de containers*
 
-==== A
+=== A
 
-===== attach
+==== attach
 
 *docker container attach containerID* -> Possibilita conectar a um container em execução. Basta passarmos o container id como parâmetro.
 
@@ -16,19 +16,19 @@
 Se quiser sair do container e deixar ele ainda executando, utilize a combinação de teclas kbd:[Ctrl + P + Q] e não digite nada. Se digitar `exit` sairá do container e o encerrará.
 ====
 
-==== B
+=== B
 
 *docker build -t nomeRepository:tag /caminho/da/pasta/do/dockerfile* -> cria uma imagem do container a partir de um Dockerfile que deve estar indiacado no caminho no final do comando. Só se indica o caminho da pasta, não precisa indica o caminho completo do arquivo.
 
-==== C
+=== C
 
-===== create
+==== create
 
 *docker container create -ti nomeContainer* -> Apenas cria um container nomeContainer. Não cria e inicializa o container. O container é apenas criado.
 
-==== I
+=== I
 
-===== inspect
+==== inspect
 
 *docker container inspect containerID* -> exibe informações detalhadas do container com contianerID. Exemplos de informações exibidas: sobre memória, cou, etc.
 
@@ -37,9 +37,9 @@ Se quiser sair do container e deixar ele ainda executando, utilize a combinaçã
 *docker container inspect containerID | grep -i mem* -> Filtra resultados de informações sobre a memória do container.
 
 
-==== L
+=== L
 
-===== logs
+==== logs
 
 *docker container logs containerID* -> Exibe STDOUT, ou seja, a saída padrão do container com containerID. 
 
@@ -50,7 +50,7 @@ Se quiser sair do container e deixar ele ainda executando, utilize a combinaçã
 Para sair utilize kbd:[Ctrl + C].
 ====
 
-===== ls
+==== ls
 
 *docker container ls* -> Lista containers em execução.
 
@@ -88,9 +88,9 @@ Para sair utilize kbd:[Ctrl + C].
 
 *docker container ls -a -q* -> exibe somente os CONTAINER ID de todos os containers (em execução, finalizados e parados).
 
-==== R
+=== R
 
-===== run
+==== run
 
 [TIP]
 .Como sair do container sem encerrar
@@ -141,11 +141,11 @@ Ao utlizar opções -it, se quiser sair do container e deixar ele executando ain
 
 *docker container run -ti -m 512M --name nomeContainer IMAGE* -> Com a adição de `-m 512M` ao `docker container run` estamos limitando o container com nomeContainer, que usa a imagem IMAGE, a utilizar 512 Mb de memória do host.
 
-===== restart
+==== restart
 
 *docker container restart containerID* -> reinicia um ou masi containers com o containerID.
 
-===== rm
+==== rm
 
 *docker container rm containerID* -> Remove um container parado ,com a respectiva containerID, já existente. A imagem que originou o container ainda continua.
 [IMPORTANT]
@@ -158,25 +158,25 @@ Ao remover o container só renovemos o container, a imagem que foi utilizada par
 
 *docker container rm $(docker container ls -a -q)* -> Remove os containers que estão na lista do comando `docker container ls -a -q`.
 
-==== P
+=== P
 
-===== prune
+==== prune
 
 *docker container prune* -> Rremove todos os container parados.
 
-===== pause
+==== pause
 
 *docker container pause containerID* -> pausa todos os processos rm um ou mais containers com o container ID.
 
-==== S
+=== S
 
-===== start
+==== start
 
 *docker container stop containerId* -> Para um (ou mais) container ativos que tem o containerId como CONTAINER ID.
 
 *docker container start containerId* -> Inicia um (ou mais) container parado que tem o containerId como CONTAINER ID.
 
-===== stats
+==== stats
 
 *docker container stats* -> Exibe informações(estatísticas) em tempo real referentes ao uso de recursos por todos os containers. Você terá informações de consumo de CPU, memória e rede. 
 [TIP]
@@ -188,19 +188,19 @@ Para sair utilize kbd:[Ctrl + C]
 *docker container stats containerID* -> Exibe informações(estatísticas) em tempo real referentes ao uso de recursosde um ou mais container com containerID. Você terá informações de consumo de CPU, memória e rede. 
 Exibir uma transmissão ao vivo de estatísticas de uso de recursos de conteiner(s)
 
-==== T
+=== T
 
-===== top
+==== top
 
 *docker container top containerID* -> exibe informações sobre os processos em execução de um container com containerID. Colunas exibidas do top: UID, PID, C, STIME, TTY, TIME, COMMAND.
 
-==== U
+=== U
 
-===== unpause
+==== unpause
 
 *docker container unpause containerID* -> "despausa" um ou mais container com containerID. Utilizado para desfazer o docker container pause.
 
-===== update
+==== update
 
 *docker container update -m 256m --cpus=1 containerID* -> `docker container update`permite alterar configurações de um ou mais containers com containerID em containers em execução. No exemplo alteramos a memória e cpu.
 [WARNING]

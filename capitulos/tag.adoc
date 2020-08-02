@@ -1,3 +1,3 @@
-=== tag
+== tag
 
 *docker tag imagemID nomeImagem:nomeTag* -> Nomeia uma imagem com imagemID com nomeImagem e tag com nomeTag.

@@ -1,4 +1,4 @@
-=== commit
+== commit
 
 *docker commit containerID* -> cria uma imagem a partir de um container em execução que tenha o contianerID especificado. Com esse comando a imagem ficará sem REPOSITORY (nome) e TAG.
 
