@@ -13,6 +13,14 @@
 *docker info* -> Exibe informções gerais sobre o programa docker instalado. Por exemplo exibe a versão do kernel, 
 quantidade de containers, quantidade de imagens, plugins instalados, entre outras infirmações.
 
+=== L
+
+==== login
+
+*docker login* -> Usado para autentificação da sua conta no Docker Hub.
+
+*docker login registry.endereco.com* -> Especificar outro registry em vez do Docker Hub.
+
 === V
 
 *docker version* -> Exibe informações sobre a versão do docker de uma maneira que seja fácil de ler.
