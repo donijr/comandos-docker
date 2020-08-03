@@ -22,6 +22,8 @@ include::{capitulosdir}/container.adoc[]
 
 include::{capitulosdir}/docker.adoc[]
 
+include::{capitulosdir}/history.adoc[]
+
 include::{capitulosdir}/image.adoc[]
 
 include::{capitulosdir}/images.adoc[]
