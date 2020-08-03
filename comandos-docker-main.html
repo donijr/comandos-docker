@@ -444,75 +444,90 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel0">
 <li><a href="#_comandos">Comandos</a>
 <ul class="sectlevel1">
-<li><a href="#_docker">Docker</a>
-<ul class="sectlevel2">
-<li><a href="#_i">I</a>
-<ul class="sectlevel3">
-<li><a href="#_info">info</a></li>
-</ul>
-</li>
-<li><a href="#_v">V</a></li>
+<li><a href="#_build">build</a></li>
+<li><a href="#_commit">commit</a></li>
 <li><a href="#_container">container</a>
-<ul class="sectlevel3">
+<ul class="sectlevel2">
 <li><a href="#_a">A</a>
-<ul class="sectlevel4">
+<ul class="sectlevel3">
 <li><a href="#_attach">attach</a></li>
 </ul>
 </li>
 <li><a href="#_b">B</a></li>
 <li><a href="#_c">C</a>
-<ul class="sectlevel4">
+<ul class="sectlevel3">
 <li><a href="#_create">create</a></li>
 </ul>
 </li>
-<li><a href="#_i_2">I</a>
-<ul class="sectlevel4">
+<li><a href="#_i">I</a>
+<ul class="sectlevel3">
 <li><a href="#_inspect">inspect</a></li>
 </ul>
 </li>
 <li><a href="#_l">L</a>
-<ul class="sectlevel4">
+<ul class="sectlevel3">
 <li><a href="#_logs">logs</a></li>
 <li><a href="#_ls">ls</a></li>
 </ul>
 </li>
 <li><a href="#_r">R</a>
-<ul class="sectlevel4">
+<ul class="sectlevel3">
 <li><a href="#_run">run</a></li>
 <li><a href="#_restart">restart</a></li>
 <li><a href="#_rm">rm</a></li>
 </ul>
 </li>
 <li><a href="#_p">P</a>
-<ul class="sectlevel4">
+<ul class="sectlevel3">
 <li><a href="#_prune">prune</a></li>
 <li><a href="#_pause">pause</a></li>
 </ul>
 </li>
 <li><a href="#_s">S</a>
-<ul class="sectlevel4">
+<ul class="sectlevel3">
 <li><a href="#_start">start</a></li>
 <li><a href="#_stats">stats</a></li>
 </ul>
 </li>
 <li><a href="#_t">T</a>
-<ul class="sectlevel4">
+<ul class="sectlevel3">
 <li><a href="#_top">top</a></li>
 </ul>
 </li>
 <li><a href="#_u">U</a>
-<ul class="sectlevel4">
+<ul class="sectlevel3">
 <li><a href="#_unpause">unpause</a></li>
 <li><a href="#_update">update</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#_image">image</a>
+<li><a href="#_docker">Docker</a>
+<ul class="sectlevel2">
+<li><a href="#_i_2">I</a>
 <ul class="sectlevel3">
+<li><a href="#_info">info</a></li>
+</ul>
+</li>
 <li><a href="#_l_2">L</a>
-<ul class="sectlevel4">
+<ul class="sectlevel3">
+<li><a href="#_login">login</a></li>
+</ul>
+</li>
+<li><a href="#_v">V</a></li>
+</ul>
+</li>
+<li><a href="#_history">history</a></li>
+<li><a href="#_image">image</a>
+<ul class="sectlevel2">
+<li><a href="#_l_3">L</a>
+<ul class="sectlevel3">
 <li><a href="#_ls_2">ls</a></li>
+</ul>
+</li>
+<li><a href="#_i_3">I</a>
+<ul class="sectlevel3">
+<li><a href="#_inspect_2">inspect</a></li>
 </ul>
 </li>
 </ul>
@@ -521,8 +536,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_rmi">rmi</a></li>
 <li><a href="#_start_2">start</a></li>
 <li><a href="#_stop">stop</a></li>
-</ul>
-</li>
+<li><a href="#_tag">tag</a></li>
 </ul>
 </li>
 <li><a href="#_volumes_no_docker">Volumes no Docker</a>
@@ -533,7 +547,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_comandos_2">Comandos</a>
 <ul class="sectlevel3">
 <li><a href="#_create_2">create</a></li>
-<li><a href="#_inspect_2">inspect</a></li>
+<li><a href="#_inspect_3">inspect</a></li>
 <li><a href="#_ls_3">ls</a></li>
 <li><a href="#_rm_2">rm</a></li>
 <li><a href="#_prune_2">prune</a></li>
@@ -564,42 +578,34 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <h1 id="_comandos" class="sect0">Comandos</h1>
 <div class="sect1">
-<h2 id="_docker">Docker</h2>
+<h2 id="_build">build</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>docker</strong> &#8594; comando base para a linha de comando do docker. Se digitado sozinho aprecerá a ajuda do docker. Útil para saber se o docker está instalado na máquina.</p>
+<p><strong>docker build caminho/do/dockerfile</strong> &#8594; comando para criar uma imagem a partit do dockerfile indicado. Se caminho for <code>.</code> irá buildar tudo que está na pasta.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_commit">commit</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>docker commit containerID</strong> &#8594; cria uma imagem a partir de um container em execução que tenha o contianerID especificado. Com esse comando a imagem ficará sem REPOSITORY (nome) e TAG.</p>
 </div>
 <div class="paragraph">
-<p><strong>service docker status</strong> &#8594; verifica se o docker está em execução.</p>
-</div>
-<div class="paragraph">
-<p><strong>service docker start</strong> &#8594; inicia daemon do docker.</p>
-</div>
-<div class="sect2">
-<h3 id="_i">I</h3>
-<div class="sect3">
-<h4 id="_info">info</h4>
-<div class="paragraph">
-<p><strong>docker info</strong> &#8594; Exibe informções gerais sobre o programa docker instalado. Por exemplo exibe a versão do kernel,
-quantidade de containers, quantidade de imagens, plugins instalados, entre outras infirmações.</p>
+<p><strong>docker commit containerID nomeImagem:nomeTag</strong> &#8594; cria uma imagem a partir de um container em execução que tenha o contianerID especificado. A imagem terá REPOSITPRY (nome) como nomeImagem e TAG como nomeTag.</p>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_v">V</h3>
-<div class="paragraph">
-<p><strong>docker version</strong> &#8594; Exibe informações sobre a versão do docker de uma maneira que seja fácil de ler.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_container">container</h3>
+<div class="sect1">
+<h2 id="_container">container</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p><strong>Gerenciamento de containers</strong></p>
 </div>
+<div class="sect2">
+<h3 id="_a">A</h3>
 <div class="sect3">
-<h4 id="_a">A</h4>
-<div class="sect4">
-<h5 id="_attach">attach</h5>
+<h4 id="_attach">attach</h4>
 <div class="paragraph">
 <p><strong>docker container attach containerID</strong> &#8594; Possibilita conectar a um container em execução. Basta passarmos o container id como parâmetro.</p>
 </div>
@@ -620,25 +626,25 @@ quantidade de containers, quantidade de imagens, plugins instalados, entre outra
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_b">B</h4>
+<div class="sect2">
+<h3 id="_b">B</h3>
 <div class="paragraph">
 <p><strong>docker build -t nomeRepository:tag /caminho/da/pasta/do/dockerfile</strong> &#8594; cria uma imagem do container a partir de um Dockerfile que deve estar indiacado no caminho no final do comando. Só se indica o caminho da pasta, não precisa indica o caminho completo do arquivo.</p>
 </div>
 </div>
+<div class="sect2">
+<h3 id="_c">C</h3>
 <div class="sect3">
-<h4 id="_c">C</h4>
-<div class="sect4">
-<h5 id="_create">create</h5>
+<h4 id="_create">create</h4>
 <div class="paragraph">
 <p><strong>docker container create -ti nomeContainer</strong> &#8594; Apenas cria um container nomeContainer. Não cria e inicializa o container. O container é apenas criado.</p>
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="_i">I</h3>
 <div class="sect3">
-<h4 id="_i_2">I</h4>
-<div class="sect4">
-<h5 id="_inspect">inspect</h5>
+<h4 id="_inspect">inspect</h4>
 <div class="paragraph">
 <p><strong>docker container inspect containerID</strong> &#8594; exibe informações detalhadas do container com contianerID. Exemplos de informações exibidas: sobre memória, cou, etc.</p>
 </div>
@@ -650,10 +656,10 @@ quantidade de containers, quantidade de imagens, plugins instalados, entre outra
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="_l">L</h3>
 <div class="sect3">
-<h4 id="_l">L</h4>
-<div class="sect4">
-<h5 id="_logs">logs</h5>
+<h4 id="_logs">logs</h4>
 <div class="paragraph">
 <p><strong>docker container logs containerID</strong> &#8594; Exibe STDOUT, ou seja, a saída padrão do container com containerID.</p>
 </div>
@@ -676,8 +682,8 @@ quantidade de containers, quantidade de imagens, plugins instalados, entre outra
 </table>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_ls">ls</h5>
+<div class="sect3">
+<h4 id="_ls">ls</h4>
 <div class="paragraph">
 <p><strong>docker container ls</strong> &#8594; Lista containers em execução.</p>
 </div>
@@ -735,10 +741,10 @@ quantidade de containers, quantidade de imagens, plugins instalados, entre outra
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="_r">R</h3>
 <div class="sect3">
-<h4 id="_r">R</h4>
-<div class="sect4">
-<h5 id="_run">run</h5>
+<h4 id="_run">run</h4>
 <div class="admonitionblock tip">
 <table>
 <tr>
@@ -808,6 +814,9 @@ quantidade de containers, quantidade de imagens, plugins instalados, entre outra
 <p><strong>docker container run -it IMAGE</strong> &#8594;  Executa e cria o novo container IMAGE = image do container que se quer executar. E ainda por causa e -it , vai disponibilizar o terminal do container compartilhado com o terminal do host, fazendo o container continuar em execução até que o container seja finalizado. Se a imagem já existir ela será usada.</p>
 </div>
 <div class="paragraph">
+<p><strong>docker container run -it ubuntu /bin/bash</strong> &#8594; Executa e cria o novo container com a imagem do ubuntu, vai disponibilizar o terminal do container compartilhado com o terminal do host, fazendo o container continuar em execução até que o container seja finalizado. Também vai executar o comando <code>/bin/bash</code> ao executar o container.</p>
+</div>
+<div class="paragraph">
 <p><strong>docker container run -it --name NomeContainer IMAGE</strong> &#8594; Com a adição de --name nomeCotainer ao comando <code>docker container run -it IMAGE</code> agora podemos dar um nome ao container criado que será nomeContainer, pois --name define o nome do container.</p>
 </div>
 <div class="paragraph">
@@ -820,14 +829,14 @@ quantidade de containers, quantidade de imagens, plugins instalados, entre outra
 <p><strong>docker container run -ti -m 512M --name nomeContainer IMAGE</strong> &#8594; Com a adição de <code>-m 512M</code> ao <code>docker container run</code> estamos limitando o container com nomeContainer, que usa a imagem IMAGE, a utilizar 512 Mb de memória do host.</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_restart">restart</h5>
+<div class="sect3">
+<h4 id="_restart">restart</h4>
 <div class="paragraph">
 <p><strong>docker container restart containerID</strong> &#8594; reinicia um ou masi containers com o containerID.</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_rm">rm</h5>
+<div class="sect3">
+<h4 id="_rm">rm</h4>
 <div class="paragraph">
 <p><strong>docker container rm containerID</strong> &#8594; Remove um container parado ,com a respectiva containerID, já existente. A imagem que originou o container ainda continua.</p>
 </div>
@@ -854,25 +863,25 @@ quantidade de containers, quantidade de imagens, plugins instalados, entre outra
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="_p">P</h3>
 <div class="sect3">
-<h4 id="_p">P</h4>
-<div class="sect4">
-<h5 id="_prune">prune</h5>
+<h4 id="_prune">prune</h4>
 <div class="paragraph">
 <p><strong>docker container prune</strong> &#8594; Rremove todos os container parados.</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_pause">pause</h5>
+<div class="sect3">
+<h4 id="_pause">pause</h4>
 <div class="paragraph">
 <p><strong>docker container pause containerID</strong> &#8594; pausa todos os processos rm um ou mais containers com o container ID.</p>
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="_s">S</h3>
 <div class="sect3">
-<h4 id="_s">S</h4>
-<div class="sect4">
-<h5 id="_start">start</h5>
+<h4 id="_start">start</h4>
 <div class="paragraph">
 <p><strong>docker container stop containerId</strong> &#8594; Para um (ou mais) container ativos que tem o containerId como CONTAINER ID.</p>
 </div>
@@ -880,8 +889,8 @@ quantidade de containers, quantidade de imagens, plugins instalados, entre outra
 <p><strong>docker container start containerId</strong> &#8594; Inicia um (ou mais) container parado que tem o containerId como CONTAINER ID.</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_stats">stats</h5>
+<div class="sect3">
+<h4 id="_stats">stats</h4>
 <div class="paragraph">
 <p><strong>docker container stats</strong> &#8594; Exibe informações(estatísticas) em tempo real referentes ao uso de recursos por todos os containers. Você terá informações de consumo de CPU, memória e rede.</p>
 </div>
@@ -906,25 +915,25 @@ Exibir uma transmissão ao vivo de estatísticas de uso de recursos de conteiner
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="_t">T</h3>
 <div class="sect3">
-<h4 id="_t">T</h4>
-<div class="sect4">
-<h5 id="_top">top</h5>
+<h4 id="_top">top</h4>
 <div class="paragraph">
 <p><strong>docker container top containerID</strong> &#8594; exibe informações sobre os processos em execução de um container com containerID. Colunas exibidas do top: UID, PID, C, STIME, TTY, TIME, COMMAND.</p>
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="_u">U</h3>
 <div class="sect3">
-<h4 id="_u">U</h4>
-<div class="sect4">
-<h5 id="_unpause">unpause</h5>
+<h4 id="_unpause">unpause</h4>
 <div class="paragraph">
 <p><strong>docker container unpause containerID</strong> &#8594; "despausa" um ou mais container com containerID. Utilizado para desfazer o docker container pause.</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_update">update</h5>
+<div class="sect3">
+<h4 id="_update">update</h4>
 <div class="paragraph">
 <p><strong>docker container update -m 256m --cpus=1 containerID</strong> &#8594; `docker container update`permite alterar configurações de um ou mais containers com containerID em containers em execução. No exemplo alteramos a memória e cpu.</p>
 </div>
@@ -995,12 +1004,64 @@ Exibir uma transmissão ao vivo de estatísticas de uso de recursos de conteiner
 </div>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="_docker">Docker</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>docker</strong> &#8594; comando base para a linha de comando do docker. Se digitado sozinho aprecerá a ajuda do docker. Útil para saber se o docker está instalado na máquina.</p>
+</div>
+<div class="paragraph">
+<p><strong>service docker status</strong> &#8594; verifica se o docker está em execução.</p>
+</div>
+<div class="paragraph">
+<p><strong>service docker start</strong> &#8594; inicia daemon do docker.</p>
+</div>
 <div class="sect2">
-<h3 id="_image">image</h3>
+<h3 id="_i_2">I</h3>
 <div class="sect3">
-<h4 id="_l_2">L</h4>
-<div class="sect4">
-<h5 id="_ls_2">ls</h5>
+<h4 id="_info">info</h4>
+<div class="paragraph">
+<p><strong>docker info</strong> &#8594; Exibe informções gerais sobre o programa docker instalado. Por exemplo exibe a versão do kernel,
+quantidade de containers, quantidade de imagens, plugins instalados, entre outras infirmações.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_l_2">L</h3>
+<div class="sect3">
+<h4 id="_login">login</h4>
+<div class="paragraph">
+<p><strong>docker login</strong> &#8594; Usado para autentificação da sua conta no Docker Hub.</p>
+</div>
+<div class="paragraph">
+<p><strong>docker login registry.endereco.com</strong> &#8594; Especificar outro registry em vez do Docker Hub.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_v">V</h3>
+<div class="paragraph">
+<p><strong>docker version</strong> &#8594; Exibe informações sobre a versão do docker de uma maneira que seja fácil de ler.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_history">history</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>docker history nomeImagem</strong> &#8594; exibe o histórico da imagem com nome nomeImage.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_image">image</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_l_3">L</h3>
+<div class="sect3">
+<h4 id="_ls_2">ls</h4>
 <div class="paragraph">
 <p><strong>docker image ls</strong> &#8594; listar imagens existentes</p>
 </div>
@@ -1041,21 +1102,36 @@ Exibir uma transmissão ao vivo de estatísticas de uso de recursos de conteiner
 </table>
 </div>
 </div>
-</div>
 <div class="sect2">
-<h3 id="_images">images</h3>
+<h3 id="_i_3">I</h3>
+<div class="sect3">
+<h4 id="_inspect_2">inspect</h4>
+<div class="paragraph">
+<p><strong>docker image inspect nomeImagem</strong> &#8594; exibe informações detalhadas de uma ou mas imagens com nome igual a nomeImagem.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_images">images</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p><strong>docker images</strong> &#8594; Lista imagens de containers.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_rmi">rmi</h3>
+</div>
+<div class="sect1">
+<h2 id="_rmi">rmi</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p><strong>docker rmi REPOSITORY:Tag</strong> &#8594; Remove uma ou mais imagens, também pode usar a combinação name(repository):tag com o docker rmi.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_start_2">start</h3>
+</div>
+<div class="sect1">
+<h2 id="_start_2">start</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p><strong>docker start containerId</strong> &#8594; Inicia um (ou mais) container parado que tem o containerId como CONTAINER ID.</p>
 </div>
@@ -1078,11 +1154,20 @@ Exibir uma transmissão ao vivo de estatísticas de uso de recursos de conteiner
 </table>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_stop">stop</h3>
+</div>
+<div class="sect1">
+<h2 id="_stop">stop</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p><strong>docker stop containerId</strong> &#8594; Para um (ou mais) container ativos que tem o containerId como CONTAINER ID.</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_tag">tag</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>docker tag imagemID nomeImagem:nomeTag</strong> &#8594; Nomeia uma imagem com imagemID com nomeImagem e tag com nomeTag.</p>
 </div>
 </div>
 </div>
@@ -1117,7 +1202,7 @@ Exibir uma transmissão ao vivo de estatísticas de uso de recursos de conteiner
 </div>
 </div>
 <div class="sect3">
-<h4 id="_inspect_2">inspect</h4>
+<h4 id="_inspect_3">inspect</h4>
 <div class="paragraph">
 <p><strong>docker volume inspect volumeName</strong> &#8594; exibe informações detalalhadas de um ou mais volumes.</p>
 </div>
@@ -1254,7 +1339,7 @@ Exibir uma transmissão ao vivo de estatísticas de uso de recursos de conteiner
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-07-27 01:09:04 -0300
+Last updated 2020-08-03 00:03:12 -0300
 </div>
 </div>
 </body>
