@@ -1,0 +1,3 @@
+== history
+
+*docker history nomeImagem* -> exibe o histórico da imagem com nome nomeImage.
